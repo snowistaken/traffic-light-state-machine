@@ -3,11 +3,11 @@ import { createMachine, interpret } from 'xstate';
 const lightMachine = createMachine({
   // Your state machine blueprint here
     id: 'light',
-    initial: 'GREEN_LIGHT',
+    initial: 'GreenOn',
     states: {
-      GREEN_LIGHT: { on: { TOGGLE: 'YELLOW_LIGHT' } },
-      YELLOW_LIGHT: { on: { TOGGLE: 'RED_LIGHT' } },
-      RED_LIGHT: { on: {TOGGLE: 'GREEN_LIGHT'} }
+      GreenOn: { on: { changeLight: 'YellowOn' } },
+      YellowOn: { on: { changeLight: 'RedOn' } },
+      RedOn: { on: { changeLight: 'GreenOn'} }
     }
 });
 
