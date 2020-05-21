@@ -39,13 +39,12 @@ const App = () => {
       // Your code here to change lightStatus when the 
       //   state of the state machine changes
       switch (state.value) {
-        case 'GreenOn': setLightStatus(YellowOn);
+        case 'GREEN_LIGHT': setLightStatus(YELLOW_LIGHT);
           break;
-        case 'YellowOn': setLightStatus(RedOn);
+        case 'YELLOW_LIGHT': setLightStatus(RED_LIGHT);
           break;
-        case 'RedOn': setLightStatus(GreenOn);
+        case 'RED_LIGHT': setLightStatus(GREEN_LIGHT);
       }
-
     });
   }, [])
 
